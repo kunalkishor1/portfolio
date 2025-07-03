@@ -1,0 +1,2 @@
+# This file serves as documentation for the assets directory, which may contain images, fonts, or other media files used in the portfolio. 
+# Please ensure to organize your assets properly and reference them in your HTML, CSS, and JavaScript files as needed.

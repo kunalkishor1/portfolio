@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
-import { MapPin, GraduationCap, Briefcase, Users } from "lucide-react";
+import { Briefcase, GraduationCap, MapPin, Users } from "lucide-react";
 
 import _23MCAA50_new__2__min_min__1___1___1___2__min from "@assets/23MCAA50 new (2)-min-min (1) (1) (1) (2)-min.jpg";
 
 export default function About() {
   const fadeInUp = {
-    initial: { opacity: 0, y: 60 },
+    initial: { opacity: 1, y: 60 },
     animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6 }
+    transition: { duration: 0.5 }
   };
 
   return (
@@ -15,7 +15,7 @@ export default function About() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           {...fadeInUp}
-          className="text-center mb-16"
+          className="text-center mb-18"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">About Me</h2>
           <p className="text-lg text-slate-600 max-w-3xl mx-auto">
@@ -32,8 +32,8 @@ export default function About() {
           >
             <img 
               src={_23MCAA50_new__2__min_min__1___1___1___2__min} 
-              alt="Kunal Kishor - Professional Portrait" 
-              className="rounded-2xl shadow-lg w-full h-96 object-cover"
+              alt="Kunal Kishor's Portrait" 
+              className="rounded-3xl shadow-lg w-full h-100 object-cover"
             />
           </motion.div>
           
@@ -47,7 +47,7 @@ export default function About() {
             <div>
               <h3 className="text-2xl font-semibold text-slate-900 mb-4">My Journey</h3>
               <p className="text-slate-600 leading-relaxed mb-4">
-                Currently pursuing Master of Computer Applications (MCA) at Kristu Jayanti College with a focus on 
+                Completed Master of Computer Applications (MCA) at Kristu Jayanti College with a focus on 
                 full-stack development, cybersecurity, and cloud computing. I bring practical experience from my 
                 internship at Solitaire Infosys where I worked on Java development projects.
               </p>

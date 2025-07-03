@@ -1,11 +1,11 @@
-import { useState } from "react";
-import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Linkedin, Github, Download, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { Card, CardContent } from "@/components/ui/card";
+import { motion } from "framer-motion";
+import { Download, Github, Linkedin, Mail, MapPin, Phone, Send } from "lucide-react";
+import { useState } from "react";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -102,7 +102,7 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-slate-900 text-white">
+    <section id="contact" className="py-20 bg-slate-900 text-black dark:text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           initial={{ opacity: 0, y: 60 }}
@@ -111,8 +111,8 @@ export default function Contact() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
-          <p className="text-lg text-slate-300 max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black dark:text-white">Get In Touch</h2>
+          <p className="text-lg max-w-3xl mx-auto text-black dark:text-white">
             I'm always open to discussing new opportunities, interesting projects, or potential collaborations
           </p>
         </motion.div>
@@ -125,7 +125,7 @@ export default function Contact() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl font-semibold mb-8">Contact Information</h3>
+            <h3 className="text-2xl font-semibold mb-8 text-black dark:text-white">Contact Information</h3>
             <div className="space-y-6">
               {contactInfo.map((info, index) => (
                 <motion.div
@@ -140,18 +140,18 @@ export default function Contact() {
                     <info.icon className="text-white" size={20} />
                   </div>
                   <div>
-                    <p className="text-slate-300 text-sm">{info.label}</p>
+                    <p className="text-sm text-black dark:text-white">{info.label}</p>
                     {info.href !== "#" ? (
                       <a 
                         href={info.href} 
                         target={info.href.startsWith('http') ? '_blank' : undefined}
                         rel={info.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                        className="text-white hover:text-primary-400 transition-colors duration-200"
+                        className="text-black dark:text-white hover:text-primary-400 transition-colors duration-200"
                       >
                         {info.value}
                       </a>
                     ) : (
-                      <p className="text-white">{info.value}</p>
+                      <p className="text-black dark:text-white">{info.value}</p>
                     )}
                   </div>
                 </motion.div>
@@ -167,7 +167,7 @@ export default function Contact() {
             >
               <Button
                 onClick={downloadResume}
-                className="bg-primary-600 hover:bg-primary-700 text-white"
+                className="bg-primary-600 hover:bg-primary-700 text-black dark:text-white"
               >
                 <Download className="mr-2 h-4 w-4" />
                 Download Resume
@@ -182,12 +182,12 @@ export default function Contact() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl font-semibold mb-8">Send a Message</h3>
-            <Card className="bg-slate-800 border-slate-700">
+            <h3 className="text-2xl font-semibold mb-8 text-black dark:text-white">Send a Message</h3>
+            <Card>
               <CardContent className="p-6">
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-slate-300 mb-2">
+                    <label htmlFor="name" className="block text-sm font-medium text-black dark:text-white mb-2">
                       Name
                     </label>
                     <Input
@@ -197,13 +197,13 @@ export default function Contact() {
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      className="bg-slate-700 border-slate-600 text-white placeholder-slate-400 focus:border-primary-500"
+                      className="bg-white dark:bg-black border-slate-600 text-black dark:text-white placeholder:text-gray-500 dark:placeholder:text-gray-400 focus:border-primary-500"
                       placeholder="Your Name"
                     />
                   </div>
                   
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-slate-300 mb-2">
+                    <label htmlFor="email" className="block text-sm font-medium text-black dark:text-white mb-2">
                       Email
                     </label>
                     <Input
@@ -213,13 +213,13 @@ export default function Contact() {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="bg-slate-700 border-slate-600 text-white placeholder-slate-400 focus:border-primary-500"
+                      className="bg-white dark:bg-black border-slate-600 text-black dark:text-white placeholder:text-gray-500 dark:placeholder:text-gray-400 focus:border-primary-500"
                       placeholder="your.email@example.com"
                     />
                   </div>
                   
                   <div>
-                    <label htmlFor="subject" className="block text-sm font-medium text-slate-300 mb-2">
+                    <label htmlFor="subject" className="block text-sm font-medium text-black dark:text-white mb-2">
                       Subject
                     </label>
                     <Input
@@ -229,13 +229,13 @@ export default function Contact() {
                       value={formData.subject}
                       onChange={handleInputChange}
                       required
-                      className="bg-slate-700 border-slate-600 text-white placeholder-slate-400 focus:border-primary-500"
+                      className="bg-white dark:bg-black border-slate-600 text-black dark:text-white placeholder:text-gray-500 dark:placeholder:text-gray-400 focus:border-primary-500"
                       placeholder="Subject"
                     />
                   </div>
                   
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-slate-300 mb-2">
+                    <label htmlFor="message" className="block text-sm font-medium text-black dark:text-white mb-2">
                       Message
                     </label>
                     <Textarea
@@ -245,7 +245,7 @@ export default function Contact() {
                       onChange={handleInputChange}
                       required
                       rows={5}
-                      className="bg-slate-700 border-slate-600 text-white placeholder-slate-400 focus:border-primary-500 resize-none"
+                      className="bg-white dark:bg-black border-slate-600 text-black dark:text-white placeholder:text-gray-500 dark:placeholder:text-gray-400 focus:border-primary-500 resize-none"
                       placeholder="Your message..."
                     />
                   </div>

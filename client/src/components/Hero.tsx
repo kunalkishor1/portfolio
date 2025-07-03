@@ -1,6 +1,6 @@
-import { motion } from "framer-motion";
-import { Code, Mail, Phone, Linkedin, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+import { Code, Github, Linkedin, Mail, Phone } from "lucide-react";
 
 export default function Hero() {
   const scrollToSection = (href: string) => {
@@ -33,7 +33,7 @@ export default function Hero() {
               transition={{ delay: 0.2, duration: 0.8 }}
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6"
             >
-              Hi, I'm <span className="text-transparent bg-clip-text tech-gradient">Kunal Kishor</span>
+              Hi, I'm <span className="text-blue-500 bg-clip-text tech-gradient">Kunal Kishor</span>
             </motion.h1>
             
             <motion.p 
@@ -62,6 +62,7 @@ export default function Hero() {
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
             >
               <Button
+                variant="outline"
                 onClick={() => scrollToSection("#projects")}
                 className="tech-gradient hover:shadow-lg transform hover:scale-105 transition-all duration-200 text-[#2b3245]"
                 size="lg"
@@ -110,13 +111,13 @@ export default function Hero() {
           >
             <div className="relative">
               <img 
-                src="/attached_assets/23MCAA50 new (2)-min-min (1) (1) (1) (2)-min_1751542426345.jpg" 
-                alt="Kunal Kishor - Professional Portrait" 
-                className="rounded-2xl shadow-2xl w-96 h-96 object-cover"
+                src="/attached_assets/23MCAA50 new (2)-min-min (1) (1) (1) (2)-min.jpg" 
+                alt="Kunal Kishor's Portrait"  
+              style={{ objectFit: "cover", width: "350px", height: "350px", borderRadius: "1rem" }}
               />
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-primary-600/20 to-transparent"></div>
             </div>
-          </motion.div>
+          </motion.div> 
         </div>
       </div>
     </section>

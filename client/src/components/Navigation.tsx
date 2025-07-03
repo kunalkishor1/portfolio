@@ -1,7 +1,6 @@
-import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { ThemeToggle } from "@/components/ThemeToggle";
+import { useEffect, useState } from "react";
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -56,12 +55,12 @@ export default function Navigation() {
     <motion.nav 
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className="fixed top-0 w-full bg-white/90 dark:bg-slate-900/90 backdrop-blur-md shadow-sm z-50 border-b border-slate-200 dark:border-slate-700"
+      className="fixed top-0 w-full bg-white/90 backdrop-blur-md shadow-sm z-50 border-b border-slate-200"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <div className="flex-shrink-0">
-            <h1 className="text-xl font-bold text-slate-900 dark:text-white">Kunal Kishor</h1>
+            <h1 className="text-xl font-bold text-slate-900">Kunal Kishor</h1>
           </div>
           
           {/* Desktop Navigation */}
@@ -74,24 +73,22 @@ export default function Navigation() {
                     onClick={() => scrollToSection(item.href)}
                     className={`px-3 py-2 text-sm font-medium transition-colors duration-200 ${
                       activeSection === item.href.slice(1)
-                        ? 'text-primary-600 dark:text-primary-400'
-                        : 'text-slate-600 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400'
+                        ? 'text-primary-600'
+                        : 'text-slate-600 hover:text-primary-600'
                     }`}
                   >
                     {item.label}
                   </button>
                 ))}
               </div>
-              <ThemeToggle />
             </div>
           </div>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center space-x-2">
-            <ThemeToggle />
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white focus:outline-none"
+              className="text-slate-600 hover:text-slate-900 focus:outline-none"
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -105,14 +102,14 @@ export default function Navigation() {
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: "auto" }}
           exit={{ opacity: 0, height: 0 }}
-          className="md:hidden bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-700"
+          className="md:hidden bg-white border-t border-slate-200"
         >
           <div className="px-2 pt-2 pb-3 space-y-1">
             {navItems.map((item) => (
               <button
                 key={item.href}
                 onClick={() => scrollToSection(item.href)}
-                className="block w-full text-left text-slate-600 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 px-3 py-2 text-sm font-medium"
+                className="block w-full text-left text-slate-600 hover:text-primary-600 px-3 py-2 text-sm font-medium"
               >
                 {item.label}
               </button>
