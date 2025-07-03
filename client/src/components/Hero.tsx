@@ -110,7 +110,7 @@ export default function Hero() {
           >
             <div className="relative">
               <img 
-                src="@assets/23MCAA50 new (2)-min-min (1) (1) (1) (2)-min_1751542426345.jpg" 
+                src="/attached_assets/23MCAA50 new (2)-min-min (1) (1) (1) (2)-min_1751542426345.jpg" 
                 alt="Kunal Kishor - Professional Portrait" 
                 className="rounded-2xl shadow-2xl w-96 h-96 object-cover"
               />

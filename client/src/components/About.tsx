@@ -29,7 +29,7 @@ export default function About() {
             viewport={{ once: true }}
           >
             <img 
-              src="@assets/23MCAA50 new (2)-min-min (1) (1) (1) (2)-min_1751542426345.jpg" 
+              src="/attached_assets/23MCAA50 new (2)-min-min (1) (1) (1) (2)-min_1751542426345.jpg" 
               alt="Kunal Kishor - Professional Portrait" 
               className="rounded-2xl shadow-lg w-full h-96 object-cover"
             />
