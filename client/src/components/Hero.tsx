@@ -63,7 +63,7 @@ export default function Hero() {
             >
               <Button
                 onClick={() => scrollToSection("#projects")}
-                className="tech-gradient text-white hover:shadow-lg transform hover:scale-105 transition-all duration-200"
+                className="tech-gradient hover:shadow-lg transform hover:scale-105 transition-all duration-200 text-[#2b3245]"
                 size="lg"
               >
                 <Code className="mr-2 h-4 w-4" />

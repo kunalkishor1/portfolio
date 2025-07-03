@@ -10,7 +10,7 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <div className="font-sans text-slate-900 bg-slate-50">
+    <div className="font-sans text-slate-900 dark:text-slate-100 bg-slate-50 dark:bg-slate-900">
       <Navigation />
       <Hero />
       <About />
