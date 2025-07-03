@@ -29,8 +29,8 @@ export default function About() {
             viewport={{ once: true }}
           >
             <img 
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=600" 
-              alt="Professional portrait" 
+              src="@assets/23MCAA50 new (2)-min-min (1) (1) (1) (2)-min_1751542426345.jpg" 
+              alt="Kunal Kishor - Professional Portrait" 
               className="rounded-2xl shadow-lg w-full h-96 object-cover"
             />
           </motion.div>

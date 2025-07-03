@@ -110,8 +110,8 @@ export default function Hero() {
           >
             <div className="relative">
               <img 
-                src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=800" 
-                alt="Professional developer workspace" 
+                src="@assets/23MCAA50 new (2)-min-min (1) (1) (1) (2)-min_1751542426345.jpg" 
+                alt="Kunal Kishor - Professional Portrait" 
                 className="rounded-2xl shadow-2xl w-96 h-96 object-cover"
               />
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-primary-600/20 to-transparent"></div>
