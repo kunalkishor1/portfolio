@@ -27,7 +27,14 @@ export default function Hero() {
             transition={{ duration: 0.8 }}
             className="text-center lg:text-left"
           >
-            
+            <motion.h1 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.8 }}
+              className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6"
+            >
+              Hi, I'm <span className="text-transparent bg-clip-text tech-gradient">Kunal Kishor</span>
+            </motion.h1>
             
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
