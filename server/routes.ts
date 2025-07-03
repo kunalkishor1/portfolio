@@ -1,30 +1,62 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
+import { insertContactSubmissionSchema } from "@shared/schema";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Contact form endpoint
   app.post("/api/contact", async (req, res) => {
     try {
-      const { name, email, subject, message } = req.body;
+      // Validate the input data
+      const validation = insertContactSubmissionSchema.safeParse(req.body);
       
-      // In a real implementation, this would:
-      // 1. Validate the input data
-      // 2. Send an email using a service like SendGrid, Nodemailer, etc.
-      // 3. Store the contact form submission in a database
-      // 4. Send a confirmation email to the user
+      if (!validation.success) {
+        return res.status(400).json({
+          success: false,
+          message: "Invalid form data. Please check your input.",
+          errors: validation.error.errors
+        });
+      }
+
+      const { name, email, subject, message } = validation.data;
       
-      console.log("Contact form submission:", { name, email, subject, message });
+      // Store the contact form submission in the database
+      const submission = await storage.createContactSubmission({
+        name,
+        email,
+        subject,
+        message
+      });
+      
+      console.log("Contact form submission saved:", submission);
       
       res.json({ 
         success: true, 
-        message: "Thank you for your message! I'll get back to you soon." 
+        message: "Thank you for your message! I'll get back to you soon.",
+        submissionId: submission.id
       });
     } catch (error) {
       console.error("Contact form error:", error);
       res.status(500).json({ 
         success: false, 
         message: "Sorry, there was an error sending your message. Please try again." 
+      });
+    }
+  });
+
+  // Get contact submissions endpoint (for admin use)
+  app.get("/api/contact-submissions", async (req, res) => {
+    try {
+      const submissions = await storage.getContactSubmissions();
+      res.json({ 
+        success: true, 
+        submissions 
+      });
+    } catch (error) {
+      console.error("Error fetching contact submissions:", error);
+      res.status(500).json({ 
+        success: false, 
+        message: "Error fetching contact submissions" 
       });
     }
   });

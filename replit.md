@@ -101,6 +101,11 @@ This is a modern, professional portfolio website for Kunal Kishor, a Software En
 ```
 Changelog:
 - July 03, 2025. Initial setup
+- July 03, 2025. Added PostgreSQL database integration
+  - Created contact submissions table
+  - Implemented database storage for contact form
+  - Added input validation and error handling
+  - Integrated Drizzle ORM with Neon PostgreSQL
 ```
 
 ## User Preferences
