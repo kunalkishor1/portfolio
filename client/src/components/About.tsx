@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { MapPin, GraduationCap, Briefcase, Users } from "lucide-react";
 
+import _23MCAA50_new__2__min_min__1___1___1___2__min from "@assets/23MCAA50 new (2)-min-min (1) (1) (1) (2)-min.jpg";
+
 export default function About() {
   const fadeInUp = {
     initial: { opacity: 0, y: 60 },
@@ -29,7 +31,7 @@ export default function About() {
             viewport={{ once: true }}
           >
             <img 
-              src="/attached_assets/23MCAA50 new (2)-min-min (1) (1) (1) (2)-min_1751542426345.jpg" 
+              src={_23MCAA50_new__2__min_min__1___1___1___2__min} 
               alt="Kunal Kishor - Professional Portrait" 
               className="rounded-2xl shadow-lg w-full h-96 object-cover"
             />
